@@ -1,8 +1,7 @@
-import logging, sys
+from logger import *
 
-def encode(input_str, scheme, log_level = logging.DEBUG):
-    logging.basicConfig(stream=sys.stderr, level=log_level)
-
+def encode(input_str, scheme):
+    
     if (len(scheme) != 64):
         raise Exception("Not a base64 scheme, needs to be 64 characters")
 

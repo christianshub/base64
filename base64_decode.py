@@ -1,4 +1,4 @@
-import logging, sys
+from logger import *
 
 def binStr_to_ascii(binStr):
     
@@ -25,9 +25,7 @@ def binStr_to_ascii(binStr):
     # Getting the ASCII value
     return ascii_text
 
-def decode(input_str, scheme, log_level = logging.DEBUG):
-    logging.basicConfig(stream=sys.stderr, level=log_level)
-
+def decode(input_str, scheme):
     logging.debug(f"Pre-encoded input: {input_str}")
     if (len(scheme) != 64):
             raise Exception("Not a base64 scheme, needs to be 64 characters")
